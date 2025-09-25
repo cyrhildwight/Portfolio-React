@@ -577,7 +577,7 @@ body {
 }
 
 .avatar {
-  margin-top: -190px;
+  margin-top: -120px;
   width: auto;
   height: auto;
   max-width: 900px;
@@ -686,7 +686,7 @@ section::before {
 .skills {
   margin-top: -30px;
   /* Opposite split with (/) seam, colors inverted */
-  background: linear-gradient(225deg, var(--bg-primary) 0 49.9%, #ffffff 50.1% 100%);
+  background: linear-gradient(236deg, var(--bg-primary) 0 49.9%, #ffffff 50.1% 100%);
 }
 
 .skills-grid {
