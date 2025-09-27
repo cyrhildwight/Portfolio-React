@@ -8,7 +8,7 @@ const AdminDashboard = ({ admin, onLogout }) => {
   React.useEffect(() => {
     const fetchMessages = async () => {
       try {
-  const res = await fetch('portfoliobackend-pearl-iota.vercel.app');
+  const res = await fetch('https://portfoliobackend-pearl-iota.vercel.app/api/contact');
         if (!res.ok) throw new Error('Failed to fetch messages');
         const data = await res.json();
         setMessages(data);
