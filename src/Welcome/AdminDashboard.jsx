@@ -8,7 +8,7 @@ const AdminDashboard = ({ admin, onLogout }) => {
   React.useEffect(() => {
     const fetchMessages = async () => {
       try {
-  const res = await fetch('https://portfoliobackend-cyrhildwights-projects.vercel.app/');
+  const res = await fetch('https://portfoliobackend2-woad.vercel.app/');
         if (!res.ok) throw new Error('Failed to fetch messages');
         const data = await res.json();
         setMessages(data);
