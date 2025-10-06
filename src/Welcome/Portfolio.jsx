@@ -128,9 +128,9 @@ const Portfolio = () => {
 
   // Contact information
   const contactInfo = {
-    facebook: 'https://facebook.com/cyrhildwight',
+    facebook: 'https://www.facebook.com/cyrhildwight123/',
     gmail: 'cyrhildwight@gmail.com',
-    mobile: '+63 912 345 6789'
+    mobile: '+63 915 263 5084'
   };
 
   return (
