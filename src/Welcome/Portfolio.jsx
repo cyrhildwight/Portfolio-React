@@ -53,6 +53,21 @@ const Portfolio = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Navbar scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar?.classList.add('scrolled');
+      } else {
+        navbar?.classList.remove('scrolled');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   // Projects data - Industrial Technology & Laravel focused
   const projects = [
     {
@@ -111,38 +126,11 @@ const Portfolio = () => {
     ],
   };
 
-  // Contact form state and handlers for API integration
-  const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
-  const [contactLoading, setContactLoading] = useState(false);
-  const [contactSuccess, setContactSuccess] = useState('');
-  const [contactError, setContactError] = useState('');
-
-  const handleContactChange = e => {
-    setContactForm({ ...contactForm, [e.target.name]: e.target.value });
-  };
-
-  const handleContactSubmit = async e => {
-    e.preventDefault();
-    setContactLoading(true);
-    setContactError('');
-    setContactSuccess('');
-    try {
-  const res = await fetch('https://portfoliobackend2-woad.vercel.app/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(contactForm),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        setContactSuccess('Message sent!');
-        setContactForm({ name: '', email: '', message: '' });
-      } else {
-        setContactError(data.error || 'Failed to send message.');
-      }
-    } catch (err) {
-      setContactError('Network error.');
-    }
-    setContactLoading(false);
+  // Contact information
+  const contactInfo = {
+    facebook: 'https://facebook.com/cyrhildwight',
+    gmail: 'cyrhildwight@gmail.com',
+    mobile: '+63 912 345 6789'
   };
 
   return (
@@ -543,61 +531,74 @@ const Portfolio = () => {
               </div>
             </div>
 
-            {/* Contact Form Section */}
-            <div className="contact-form-container">
-              <form className="contact-form" onSubmit={handleContactSubmit}>
-                <div className="contact-form-header">
-                  <h3 className="contact-form-title">Get In Touch</h3>
-                  <p className="contact-form-subtitle">
-                    Tell me about your project and let's discuss how we can work together to achieve your goals.
-                  </p>
+            {/* Contact Information Section */}
+            <div className="contact-info-container">
+              <div className="contact-info-header">
+                <h3 className="contact-info-title">Get In Touch</h3>
+                <p className="contact-info-subtitle">
+                  Ready to start your next project? Reach out to me through any of these channels.
+                </p>
+              </div>
+              
+              <div className="contact-methods">
+                <div className="contact-method">
+                  <div className="contact-method-icon">
+                    <img src={`https://cdn.simpleicons.org/facebook/000000`} alt="Facebook" width="24" height="24" />
+                  </div>
+                  <div className="contact-method-content">
+                    <h4 className="contact-method-title">Facebook</h4>
+                    <p className="contact-method-description">Connect with me on Facebook</p>
+                    <a 
+                      href={contactInfo.facebook} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="contact-method-link"
+                    >
+                      Visit Profile
+                    </a>
+                  </div>
                 </div>
-                <div className="form-group">
-                  <input 
-                    type="text" 
-                    id="name" 
-                    name="name" 
-                    placeholder="Your Full Name" 
-                    className="form-input"
-                    required 
-                    value={contactForm.name}
-                    onChange={handleContactChange}
-                  />
-                  <label htmlFor="name" className="form-label">Name</label>
+
+                <div className="contact-method">
+                  <div className="contact-method-icon">
+                    <img src={`https://cdn.simpleicons.org/gmail/000000`} alt="Gmail" width="24" height="24" />
+                  </div>
+                  <div className="contact-method-content">
+                    <h4 className="contact-method-title">Gmail</h4>
+                    <p className="contact-method-description">Send me an email</p>
+                    <a 
+                      href={`mailto:${contactInfo.gmail}`}
+                      className="contact-method-link"
+                    >
+                      {contactInfo.gmail}
+                    </a>
+                  </div>
                 </div>
-                <div className="form-group">
-                  <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    placeholder="your.email@company.com" 
-                    className="form-input"
-                    required 
-                    value={contactForm.email}
-                    onChange={handleContactChange}
-                  />
-                  <label htmlFor="email" className="form-label">Email</label>
+
+                <div className="contact-method">
+                  <div className="contact-method-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                  </div>
+                  <div className="contact-method-content">
+                    <h4 className="contact-method-title">Mobile</h4>
+                    <p className="contact-method-description">Call or text me directly</p>
+                    <a 
+                      href={`tel:${contactInfo.mobile}`}
+                      className="contact-method-link"
+                    >
+                      {contactInfo.mobile}
+                    </a>
+                  </div>
                 </div>
-                <div className="form-group">
-                  <textarea 
-                    id="message" 
-                    name="message" 
-                    placeholder="Describe your project, timeline, and any specific requirements you have in mind..." 
-                    className="form-textarea"
-                    rows="6"
-                    required
-                    value={contactForm.message}
-                    onChange={handleContactChange}
-                  ></textarea>
-                  <label htmlFor="message" className="form-label">Project Details</label>
-                </div>
-                <button type="submit" className="contact-button" disabled={contactLoading}>
-                  <span>{contactLoading ? 'Sending...' : 'Send Message'}</span>
-                  <span style={{ marginLeft: '8px' }}>→</span>
-                </button>
-                {contactSuccess && <div style={{ color: '#4caf50', marginTop: '1rem', textAlign: 'center' }}>{contactSuccess}</div>}
-                {contactError && <div style={{ color: '#ff4d4f', marginTop: '1rem', textAlign: 'center' }}>{contactError}</div>}
-              </form>
+              </div>
+
+              <div className="contact-cta">
+                <p className="contact-cta-text">
+                  Prefer a different way to connect? Feel free to reach out through any of the methods above!
+                </p>
+              </div>
             </div>
           </div>
         </div>
