@@ -127,7 +127,7 @@ const Portfolio = () => {
     setContactError('');
     setContactSuccess('');
     try {
-  const res = await fetch('http://localhost:3000/api/contact', {
+  const res = await fetch('https://portfoliobackend-cyrhildwights-projects.vercel.app/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(contactForm),
