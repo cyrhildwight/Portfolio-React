@@ -17,6 +17,15 @@ import RobotLogo from '../assets/images/robot.png';
 import GitHubLogo from '../assets/images/GitHub.svg';
 import AutoCADLogo from '../assets/images/autocad.svg';
 import MITLogo from '../assets/images/mit.png';
+import POSImg from '../assets/images/pos.png';
+import KatipunanImg from '../assets/images/katipunan.png';
+import DTRImg from '../assets/images/dtr.png';
+import BigasanImg from '../assets/images/bigasan.png';
+import HRISImg from '../assets/images/hris.png';
+import JamImg from '../assets/images/jam.PNG';
+import ValentineImg from '../assets/images/valentine.PNG';
+import SmartImg from '../assets/images/smart.PNG';
+import IndusImg from '../assets/images/indus.PNG';
 
 const Portfolio = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -68,43 +77,95 @@ const Portfolio = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Projects data - Industrial Technology & Laravel focused
+  // Projects data - Organized by latest relevance
   const projects = [
     {
       id: 1,
-      title: "Smart Home Automation System",
-      description: "Comprehensive home automation platform using Arduino/ESP8266 with MIT App Inventor mobile app. Features Firebase real-time database for instant updates, biometric door access control, IoT device management, and phone-based remote control for lights, security systems, and door automation.",
-      image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80", // Smart Home
-      technologies: ["C++ Programming Language", "Arduino IDE", "ESP8266", "MIT App Inventor", "Firebase"],
+      title: "J&J POS App",
+      description: "A modern, reliable Point of Sale (POS) mobile application built with Flutter. Engineered for speedy transactions, receipt generation via Bluetooth printing, and real-time syncing of offline sales seamlessly with a centralized Supabase database.",
+      image: POSImg, // POS System / Checkout
+      technologies: ["Flutter", "Dart", "Supabase", "Bluetooth Print"],
       githubUrl: "#"
     },
     {
       id: 2,
-      title: "Digital Time Record (DTR) System",
-      description: "Employee attendance and time tracking system built with Laravel. Features face capture, real-time reporting, payroll integration, and mobile-responsive dashboard for HR management.",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80", // DTR/Clock-in
-      technologies: ["Laravel", "MySQL", "JavaScript", "Tailwind CSS"],
+      title: "Katipunan ng Kabataan Youth App",
+      description: "A community-focused mobile application aimed at youth empowerment for the Katipunan ng Kabataan. Built with React Native, it features a real-time SOS distress button, community forums, event announcements, and emergency contact integrations.",
+      image: KatipunanImg, // Community / Helping Hands
+      technologies: ["React Native", "JavaScript", "Real-time API", "Supabase"],
       githubUrl: "#"
     },
     {
       id: 3,
+      title: "Jam Inventory App",
+      description: "A comprehensive web and mobile inventory management application. Allows business owners to seamlessly track stock levels, manage product variation, configure reorder points, and maintain accurate records across platforms.",
+      image: JamImg, // Inventory management
+      technologies: ["React", "Laravel", "MySQL", "Tailwind CSS"],
+      githubUrl: "#"
+    },
+    {
+      id: 4,
+      title: "Bigasan Hub Inventory App",
+      description: "Specialized inventory tracking web application tailored specifically for rice retailers (Bigasan Hub). Provides clear insights into sack inventory, automates weight conversions, tracks incoming deliveries, and monitors overall sales logs.",
+      image: BigasanImg, // Rice sacks / Grains
+      technologies: ["React", "Laravel", "MySQL", "Tailwind CSS"],
+      githubUrl: "#"
+    },
+    {
+      id: 5,
+      title: "HRIS with Biometric & Face Recognition",
+      description: "Advanced web-based Human Resource Information System integrating biometric and face recognition technology. Developed to streamline attendance tracking, secure daily time records, and manage payroll operations effectively.",
+      image: HRISImg, // Biometrics / Face Recognition
+      technologies: ["React", "Laravel", "MySQL", "Biometrics", "Face Recognition API"],
+      githubUrl: "#"
+    },
+    {
+      id: 6,
+      title: "Digital Time Record (DTR) System",
+      description: "Employee attendance and time tracking system built with Laravel. Features face capture, real-time reporting, payroll integration, and mobile-responsive dashboard for HR management.",
+      image: DTRImg, // DTR/Clock-in
+      technologies: ["Laravel", "MySQL", "JavaScript", "Tailwind CSS"],
+      githubUrl: "#"
+    },
+    {
+      id: 7,
+      title: "Smart Home Automation System",
+      description: "Comprehensive home automation platform using Arduino/ESP8266 with MIT App Inventor mobile app. Features Firebase real-time database for instant updates, biometric door access control, IoT device management, and phone-based remote control for lights, security systems, and door automation.",
+      image: SmartImg, // Smart Home
+      technologies: ["C++ Programming Language", "Arduino IDE", "ESP8266", "MIT App Inventor", "Firebase"],
+      githubUrl: "#"
+    },
+    {
+      id: 8,
       title: "Industrial Equipment Landing Page",
       description: "Modern, responsive landing page for industrial equipment company. Features product showcases, interactive demos, customer testimonials, and integrated contact forms with lead generation.",
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80", // Industrial Equipment
+      image: IndusImg, // Industrial Equipment
       technologies: ["Laravel", "JavaScript", "Tailwind CSS"],
       githubUrl: "#"
     },
+    {
+      id: 9,
+      title: "Valentine Website",
+      description: "A beautifully crafted, responsive web page dedicated to celebrating Valentine's Day. It features romantic themes, elegant UI animations, customized messages, and interactive elements designed with modern web technologies.",
+      image: ValentineImg, // Romance / Hearts
+      technologies: ["React", "JavaScript", "Tailwind CSS", "HTML5"],
+      githubUrl: "#"
+    }
   ];
 
   // Skills data - Industrial Technology & Laravel focused with local brand logos
   const skills = {
     programming: [
+      { name: "React / React Native", logo: "https://cdn.simpleicons.org/react/61DAFB" },
+      { name: "Flutter", logo: "https://cdn.simpleicons.org/flutter/02569B" },
+      { name: "Dart", logo: "https://cdn.simpleicons.org/dart/0175C2" },
       { name: "Laravel", logo: LaravelLogo },
       { name: "PHP", logo: PHPLogo },
       { name: "JavaScript", logo: JavaScriptLogo },
       { name: "C++", logo: CppLogo },
       { name: "Tailwind CSS", logo: TailwindLogo },
       { name: "MySQL", logo: MySQLLogo },
+      { name: "Supabase", logo: "https://cdn.simpleicons.org/supabase/3ECF8E" },
       { name: "Firebase", logo: FirebaseLogo }
     ],
     hardware: [
@@ -128,7 +189,7 @@ const Portfolio = () => {
 
   // Contact information
   const contactInfo = {
-    facebook: 'https://www.facebook.com/cyrhildwight123/',
+    facebook: 'https://www.facebook.com/cyrhildwight/',
     gmail: 'cyrhildwight@gmail.com',
     mobile: '+63 915 263 5084'
   };
@@ -141,7 +202,7 @@ const Portfolio = () => {
           <div className="nav-logo">
             <span className="logo-text">Portfolio</span>
           </div>
-          
+
           {/* Desktop Navigation */}
           <div className="nav-menu">
             <a href="#home" className="nav-link">Home</a>
@@ -154,7 +215,7 @@ const Portfolio = () => {
           {/* Theme Toggle removed for fixed dark theme */}
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="mobile-menu-btn"
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
@@ -184,11 +245,11 @@ const Portfolio = () => {
         </div>
         <div className="hero-content">
           <div className="hero-text">
-            <h1 
+            <h1
               className={`hero-title fade-scroll${visibleElements.has('hero-title') ? ' visible' : ''}`}
               data-animate="true"
               id="hero-title"
-              style={{ 
+              style={{
                 animationDelay: visibleElements.has('hero-title') ? '0s' : '0.5s',
                 opacity: visibleElements.has('hero-title') ? 1 : 0,
                 transform: visibleElements.has('hero-title') ? 'translateY(0)' : 'translateY(30px)'
@@ -196,11 +257,11 @@ const Portfolio = () => {
             >
               Hi, I'm <span className="highlight">Cyrhil Dwight Lozano</span>
             </h1>
-            <h2 
+            <h2
               className={`hero-subtitle fade-scroll${visibleElements.has('hero-subtitle') ? ' visible' : ''}`}
               data-animate="true"
               id="hero-subtitle"
-              style={{ 
+              style={{
                 animationDelay: visibleElements.has('hero-subtitle') ? '0.2s' : '0.7s',
                 opacity: visibleElements.has('hero-subtitle') ? 1 : 0,
                 transform: visibleElements.has('hero-subtitle') ? 'translateY(0)' : 'translateY(30px)'
@@ -208,24 +269,23 @@ const Portfolio = () => {
             >
               Computer Technologist and <br></br> Web Developer
             </h2>
-            <p 
+            <p
               className={`hero-description fade-scroll${visibleElements.has('hero-description') ? ' visible' : ''}`}
               data-animate="true"
               id="hero-description"
-              style={{ 
+              style={{
                 animationDelay: visibleElements.has('hero-description') ? '0.4s' : '0.9s',
                 opacity: visibleElements.has('hero-description') ? 1 : 0,
                 transform: visibleElements.has('hero-description') ? 'translateY(0)' : 'translateY(30px)'
               }}
             >
-              Bridging the gap between hardware and software, I specialize in Laravel development 
-              and industrial automation solutions that drive manufacturing efficiency.
+              With a passion for modern engineering, I specialize in full-stack web and mobile development utilizing React, React Native, Flutter, and Laravel, building scalable and innovative software solutions.
             </p>
-            <button 
+            <button
               className={`cta-button fade-scroll${visibleElements.has('hero-cta') ? ' visible' : ''}`}
               data-animate="true"
               id="hero-cta"
-              style={{ 
+              style={{
                 animationDelay: visibleElements.has('hero-cta') ? '0.6s' : '1.1s',
                 opacity: visibleElements.has('hero-cta') ? 1 : 0,
                 transform: visibleElements.has('hero-cta') ? 'translateY(0)' : 'translateY(30px)'
@@ -240,20 +300,20 @@ const Portfolio = () => {
               View Projects
             </button>
           </div>
-          <div 
+          <div
             className={`hero-image fade-scroll${visibleElements.has('hero-image') ? ' visible' : ''}`}
             data-animate="true"
             id="hero-image"
-            style={{ 
+            style={{
               animationDelay: visibleElements.has('hero-image') ? '0.8s' : '1.3s',
               opacity: visibleElements.has('hero-image') ? 1 : 0,
               transform: visibleElements.has('hero-image') ? 'translateX(0)' : 'translateX(50px)'
             }}
           >
             <div className="avatar-container">
-              <img 
+              <img
                 src={cyrhilImg}
-                alt="Industrial Technology Engineer" 
+                alt="Industrial Technology Engineer"
                 className="avatar"
               />
               <div className="avatar-glow"></div>
@@ -265,11 +325,11 @@ const Portfolio = () => {
       {/* About Me Section */}
       <section id="about" className="about">
         <div className="container">
-          <h2 
+          <h2
             className={`section-title fade-scroll${visibleElements.has('about-title') ? ' visible' : ''}`}
             data-animate="true"
             id="about-title"
-            style={{ 
+            style={{
               opacity: visibleElements.has('about-title') ? 1 : 0,
               transform: visibleElements.has('about-title') ? 'translateY(0)' : 'translateY(30px)'
             }}
@@ -277,55 +337,55 @@ const Portfolio = () => {
             About Me
           </h2>
           <div className="about-content">
-            <div 
+            <div
               className={`about-text fade-scroll${visibleElements.has('about-text') ? ' visible' : ''}`}
               data-animate="true"
               id="about-text"
-              style={{ 
+              style={{
                 opacity: visibleElements.has('about-text') ? 1 : 0,
                 transform: visibleElements.has('about-text') ? 'translateY(0)' : 'translateY(30px)'
               }}
             >
-              <h3 className="about-subtitle">Computer Technologist & Web Developer</h3>
+              <h3 className="about-subtitle">Full-Stack Web & Mobile Developer</h3>
               <p className="about-description">
-                With a passion for bridging the gap between hardware and software, I specialize in creating 
-                innovative solutions that drive manufacturing efficiency. My expertise spans from industrial 
-                automation and IoT integration to modern web development with Laravel.
+                With a passion for building robust software applications, I specialize in creating
+                innovative solutions utilizing modern technologies. My expertise spans from versatile cross-platform
+                mobile and web development with React, React Native, and Flutter, to robust backend solutions in Laravel.
               </p>
               <p className="about-description">
-                I believe in the power of technology to transform industries, combining my background in 
-                Computer Technology with hands-on experience in industrial automation, robotics, and 
-                smart manufacturing systems.
+                I believe in the powerful impact of scalable technology, combining my strong foundation in
+                software engineering with a logical, problem-solving mindset to architect high-performance
+                systems that deliver exceptional user experiences.
               </p>
               <div className="about-highlights">
                 <div className="highlight-item">
                   <div className="highlight-icon">⚡</div>
                   <div className="highlight-content">
-                    <h4>Industrial Automation</h4>
-                    <p>PLC programming, IoT integration, and smart manufacturing solutions</p>
+                    <h4>Frontend Development</h4>
+                    <p>Building responsive, dynamic user interfaces using React, JavaScript, HTML5, and Tailwind CSS.</p>
                   </div>
                 </div>
                 <div className="highlight-item">
                   <div className="highlight-icon">💻</div>
                   <div className="highlight-content">
-                    <h4>Web Development</h4>
-                    <p>Laravel, PHP, and modern web technologies for business applications</p>
+                    <h4>Backend & API Engineering</h4>
+                    <p>Developing scalable backend APIs with Laravel and PHP, efficiently managing MySQL databases.</p>
                   </div>
                 </div>
                 <div className="highlight-item">
-                  <div className="highlight-icon">🔧</div>
+                  <div className="highlight-icon">📱</div>
                   <div className="highlight-content">
-                    <h4>Hardware Integration</h4>
-                    <p>Arduino, Raspberry Pi, and embedded systems development</p>
+                    <h4>Mobile App Solutions</h4>
+                    <p>Delivering high-quality cross-platform mobile experiences leveraging React Native, Flutter, and Firebase.</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div 
+            <div
               className={`about-visual fade-scroll${visibleElements.has('about-visual') ? ' visible' : ''}`}
               data-animate="true"
               id="about-visual"
-              style={{ 
+              style={{
                 opacity: visibleElements.has('about-visual') ? 1 : 0,
                 transform: visibleElements.has('about-visual') ? 'translateX(0)' : 'translateX(50px)'
               }}
@@ -341,7 +401,7 @@ const Portfolio = () => {
                 </div>
                 <div className="about-stats">
                   <div className="stat-item">
-                    <div className="stat-number">2</div>
+                    <div className="stat-number">3</div>
                     <div className="stat-label">Years Experience</div>
                   </div>
                   <div className="stat-item">
@@ -353,7 +413,7 @@ const Portfolio = () => {
                     <div className="stat-label">Technologies Mastered</div>
                   </div>
                 </div>
-              </div>  
+              </div>
             </div>
           </div>
         </div>
@@ -362,11 +422,11 @@ const Portfolio = () => {
       {/* Skills Section */}
       <section id="skills" className="skills">
         <div className="container">
-          <h2 
+          <h2
             className={`section-title fade-scroll${visibleElements.has('skills-title') ? ' visible' : ''}`}
             data-animate="true"
             id="skills-title"
-            style={{ 
+            style={{
               opacity: visibleElements.has('skills-title') ? 1 : 0,
               transform: visibleElements.has('skills-title') ? 'translateY(0)' : 'translateY(30px)'
             }}
@@ -375,12 +435,12 @@ const Portfolio = () => {
           </h2>
           <div className="skills-grid">
             {Object.entries(skills).map(([category, skillList], index) => (
-              <div 
+              <div
                 key={category}
                 className={`skill-category fade-scroll${visibleElements.has(`skill-category-${index}`) ? ' visible' : ''}`}
                 data-animate="true"
                 id={`skill-category-${index}`}
-                style={{ 
+                style={{
                   animationDelay: `${index * 0.2}s`,
                   opacity: visibleElements.has(`skill-category-${index}`) ? 1 : 0,
                   transform: visibleElements.has(`skill-category-${index}`) ? 'translateY(0)' : 'translateY(30px)'
@@ -391,18 +451,18 @@ const Portfolio = () => {
                 </div>
                 <div className="skill-badges">
                   {skillList.map((skill, skillIndex) => (
-                    <div 
+                    <div
                       key={skill.name}
                       className={`skill-badge fade-scroll${visibleElements.has(`skill-category-${index}`) ? ' visible' : ''}`}
-                      style={{ 
+                      style={{
                         animationDelay: `${(index * 0.2) + (skillIndex * 0.1)}s`,
                         opacity: visibleElements.has(`skill-category-${index}`) ? 1 : 0,
                         transform: visibleElements.has(`skill-category-${index}`) ? 'scale(1)' : 'scale(0.8)'
                       }}
                     >
                       <div className="skill-icon">
-                        <img 
-                          src={skill.logo} 
+                        <img
+                          src={skill.logo}
                           alt={skill.name}
                           className="skill-logo"
                         />
@@ -420,25 +480,25 @@ const Portfolio = () => {
       {/* Projects Section */}
       <section id="projects" className="projects">
         <div className="container">
-          <h2 
+          <h2
             className={`section-title fade-scroll${visibleElements.has('projects-title') ? ' visible' : ''}`}
             data-animate="true"
             id="projects-title"
-            style={{ 
+            style={{
               opacity: visibleElements.has('projects-title') ? 1 : 0,
               transform: visibleElements.has('projects-title') ? 'translateY(0)' : 'translateY(30px)'
             }}
           >
             Featured Projects
           </h2>
-          <div className="projects-grid">
+          <div className="projects-list">
             {projects.map((project, index) => (
-              <div 
+              <div
                 key={project.id}
-                className={`project-card fade-scroll${visibleElements.has(`project-${index}`) ? ' visible' : ''}`}
+                className={`project-row fade-scroll${visibleElements.has(`project-${index}`) ? ' visible' : ''}`}
                 data-animate="true"
                 id={`project-${index}`}
-                style={{ 
+                style={{
                   animationDelay: `${index * 0.1}s`,
                   opacity: visibleElements.has(`project-${index}`) ? 1 : 0,
                   transform: visibleElements.has(`project-${index}`) ? 'translateY(0)' : 'translateY(30px)'
@@ -446,8 +506,6 @@ const Portfolio = () => {
               >
                 <div className="project-image-container">
                   <img src={project.image} alt={project.title} className="project-image" />
-                  <div className="project-overlay">
-                  </div>
                 </div>
                 <div className="project-content">
                   <h3 className="project-title">{project.title}</h3>
@@ -467,22 +525,22 @@ const Portfolio = () => {
       {/* Contact Section */}
       <section id="contact" className="contact">
         <div className="container">
-          <h2 
+          <h2
             className={`section-title fade-scroll${visibleElements.has('contact-title') ? ' visible' : ''}`}
             data-animate="true"
             id="contact-title"
-            style={{ 
+            style={{
               opacity: visibleElements.has('contact-title') ? 1 : 0,
               transform: visibleElements.has('contact-title') ? 'translateY(0)' : 'translateY(30px)'
             }}
           >
             Let's Work Together
           </h2>
-          <div 
+          <div
             className={`contact-content fade-scroll${visibleElements.has('contact-content') ? ' visible' : ''}`}
             data-animate="true"
             id="contact-content"
-            style={{ 
+            style={{
               opacity: visibleElements.has('contact-content') ? 1 : 0,
               transform: visibleElements.has('contact-content') ? 'translateY(0)' : 'translateY(30px)'
             }}
@@ -491,10 +549,10 @@ const Portfolio = () => {
             <div className="contact-info">
               <h3 className="contact-subtitle">Ready to Transform Your Ideas?</h3>
               <p className="contact-description">
-                Whether you're looking to automate your manufacturing processes, build a custom web application, 
+                Whether you're looking to automate your manufacturing processes, build a custom web application,
                 or integrate IoT solutions, I'm here to help bring your vision to life with cutting-edge technology.
               </p>
-              
+
               <div className="contact-features">
                 <div className="contact-feature">
                   <div className="contact-feature-icon">⚡</div>
@@ -539,7 +597,7 @@ const Portfolio = () => {
                   Ready to start your next project? Reach out to me through any of these channels.
                 </p>
               </div>
-              
+
               <div className="contact-methods">
                 <div className="contact-method">
                   <div className="contact-method-icon">
@@ -548,9 +606,9 @@ const Portfolio = () => {
                   <div className="contact-method-content">
                     <h4 className="contact-method-title">Facebook</h4>
                     <p className="contact-method-description">Connect with me on Facebook</p>
-                    <a 
-                      href={contactInfo.facebook} 
-                      target="_blank" 
+                    <a
+                      href={contactInfo.facebook}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="contact-method-link"
                     >
@@ -566,7 +624,7 @@ const Portfolio = () => {
                   <div className="contact-method-content">
                     <h4 className="contact-method-title">Gmail</h4>
                     <p className="contact-method-description">Send me an email</p>
-                    <a 
+                    <a
                       href={`mailto:${contactInfo.gmail}`}
                       className="contact-method-link"
                     >
@@ -578,13 +636,13 @@ const Portfolio = () => {
                 <div className="contact-method">
                   <div className="contact-method-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                     </svg>
                   </div>
                   <div className="contact-method-content">
                     <h4 className="contact-method-title">Mobile</h4>
                     <p className="contact-method-description">Call or text me directly</p>
-                    <a 
+                    <a
                       href={`tel:${contactInfo.mobile}`}
                       className="contact-method-link"
                     >
@@ -610,9 +668,9 @@ const Portfolio = () => {
           <div className="footer-content">
             <div className="footer-section">
               <div className="footer-profile">
-                <img 
+                <img
                   src={cyrhilImg}
-                  alt="Cyrhil Dwight Lozano" 
+                  alt="Cyrhil Dwight Lozano"
                   className="footer-avatar"
                 />
                 <div className="footer-profile-info">
@@ -636,6 +694,7 @@ const Portfolio = () => {
             <div className="footer-section">
               <h4 className="footer-subtitle">Technologies</h4>
               <div className="footer-tech">
+                <span className="tech-tag">Flutter</span>
                 <span className="tech-tag">Laravel</span>
                 <span className="tech-tag">PHP</span>
                 <span className="tech-tag">JavaScript</span>
