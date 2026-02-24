@@ -2750,8 +2750,7 @@ section::before {
     height: 100%;
   }
 
-  .hero,
-  .skills {
+  .hero {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   }
 
