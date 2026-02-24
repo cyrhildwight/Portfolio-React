@@ -704,7 +704,7 @@ const Portfolio = () => {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2025 Cyrhil Dwight Lozano. All rights reserved.</p>
+            <p>&copy; 2026 Cyrhil Dwight Lozano. All rights reserved.</p>
             <div className="footer-social">
               <span className="social-text">Connect with me</span>
             </div>
